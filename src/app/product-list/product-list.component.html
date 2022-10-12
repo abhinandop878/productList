@@ -6,32 +6,55 @@
             <div class="row g-3">
                 <div *ngFor="let i of productsData.products" class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
                     <div class="card">
-                        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                              <div class="carousel-item active" data-bs-interval="10000">
-                                <img src="{{i.image}}" class="d-block w-100" alt="...">
-                              </div>
-                              <div class="carousel-item" data-bs-interval="2000">
-                                <img src="{{i.thumbnail}}" class="d-block w-100" alt="...">
+                        <img height="300px"src="{{i.thumbnail}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{i.title}}</h5>
+                          <p class="card-text" style="color: orange;"><strong>{{i.price}}$</strong></p>
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            View
+                          </button>
+                          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                              <div class="modal-content">
+                                <div class="modal-header" style="background-color: orange;">
+                                  <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: white;">{{i.title}}</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Description</th>
+                                            <th scope="col">DiscountPercentage</th>
+                                            <th scope="col">Rating</th>
+                                            <th scope="col">Stock</th>
+                                            <th scope="col">brand</th>
+                                            <th scope="col">Category</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td>{{i.description}}</td>
+                                            <td>{{i.discountPercentage}}</td>
+                                            <td>{{i.rating}}</td>
+                                            <td>{{i.stock}}</td>
+                                            <td>{{i.brand}}</td>
+                                            <td>{{i.category}}</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-success">Buy</button>
+                                </div>
                               </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Next</span>
-                            </button>
                           </div>
-                        <div class="card-body">
-                          <h5 class="card-title"></h5>
-                          <p class="card-text"></p>
-                          <a href="/product1" class="btn btn-primary">View</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-  </div>
+</div>
